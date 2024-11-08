@@ -34,7 +34,7 @@ else {
     // 通过检查网页中是否存在"ID "这个字符串判断这个 ID 是否存在
     if (strpos($response, "data-v-4f86f6dc>ID </span>") === false) {
         // 如果存在
-        preg_match('/ID\s+(\w+)/', $response, $groupId); // ID
+        preg_match('/ID\s+(\w+)/', $response, $botId); // ID
         preg_match('/id:(\d+)/', $response, $id); // 机器人序号
         preg_match('/nickname:"(.*?)"/', $response, $nickname); // 昵称
         preg_match('/nicknameId:(\d+)/', $response, $nicknameId); // 昵称 ID
@@ -47,7 +47,7 @@ else {
             "code" => 1,
             "msg" => "ok",
             "data" => array(
-                "botId" => $groupId[1],
+                "botId" => $botId[1],
                 "id" => intval($id[1]),
                 "nickname" => $nickname[1],
                 "nicknameId" => intval($nicknameId[1]),
