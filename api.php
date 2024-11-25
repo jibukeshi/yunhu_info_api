@@ -59,9 +59,10 @@ else {
             // 替换 js 变量为值
             // 创建关联数组
             $params = array_combine($param_names, $param_values);
-            // 全词匹配
             foreach ($params as $key => $value) {
-                $info = preg_replace('/\b' . preg_quote($key, '/') . '\b/', $value, $info);
+                // 替换时，使用 JSON 编码的值，防止误匹配
+                $value = json_encode(trim($value, '"'));
+                $info = preg_replace('/\b' . preg_quote($key, '/') . '\b(?=[:,}])/', $value, $info);
             }
             // 修复键没有引号的 json
             $info = preg_replace('/(?<=\{|\[|\,)(\s*)([a-zA-Z_][a-zA-Z0-9_]*)(?=\s*:)/', '$1"$2"', $info);
