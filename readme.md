@@ -9,7 +9,7 @@
 请求地址：`api.php`  
 返回格式：`JSON`  
 请求方式：`GET` 或 `POST`  
-请求示例：`https://qingzhi.jibukeshi.us.kg/api/yunhu/api.php?type=user&id=7058262`
+请求示例：`https://qingzhi.jibukeshi.dpdns.org/api/yunhu/api.php?type=user&id=7058262`
 
 ### 请求参数
 
@@ -25,62 +25,67 @@
 | 参数名称 | 参数类型 | 说明内容 |
 | --- | --- | --- |
 | `code` | `integer` | 状态码 |
-| `message` | `string` | 返回信息 |
+| `msg` | `string` | 返回信息 |
 | `data` | `array` | 返回数据 |
-| `data.userId` | `string` | 用户 ID |
-| `data.nickname` | `string` | 昵称 |
-| `data.avatarUrl` | `string` | 头像链接 |
-| `data.registerTime` | `integer` | 注册时间戳 |
-| `data.registerTimeText` | `string` | 注册时间 |
-| `data.onLineDay` | `integer` | 在线天数 |
-| `data.continuousOnLineDay` | `integer` | 连续在线 |
-| `data.isVip` | `boolean` | 是否为 VIP |
-| `data.medals` | `array` | 称号列表 |
+| `data.user.userId` | `string` | 用户 ID |
+| `data.user.nickname` | `string` | 昵称 |
+| `data.user.avatarUrl` | `string` | 头像链接 |
+| `data.user.registerTime` | `integer` | 注册时间戳 |
+| `data.user.registerTimeText` | `string` | 注册时间 |
+| `data.user.onLineDay` | `integer` | 在线天数 |
+| `data.user.continuousOnLineDay` | `integer` | 连续在线 |
+| `data.user.isVip` | `boolean` | 是否为 VIP |
+| `data.user.medals` | `array` | 称号列表 |
 
 #### 当 type 为 group 时
 
 | 参数名称 | 参数类型 | 说明内容 |
 | --- | --- | --- |
 | `code` | `integer` | 状态码 |
-| `message` | `string` | 返回信息 |
+| `msg` | `string` | 返回信息 |
 | `data` | `array` | 返回数据 |
-| `data.id` | `integer` | 群聊序号 |
-| `data.groupId` | `string` | 群聊 ID |
-| `data.name` | `string` | 群聊名称 |
-| `data.introduction` | `string` | 群聊简介 |
-| `data.createBy` | `string` | 创建者 |
-| `data.createTime` | `integer` | 创建时间戳 |
-| `data.avatarId` | `integer` | 头像 ID |
-| `data.avatarUrl` | `string` | 头像链接 |
-| `data.headcount` | `integer` | 群人数 |
-| `data.category` | `string` | 分类 |
+| `data.group.id` | `integer` | 群聊序号 |
+| `data.group.groupId` | `string` | 群聊 ID |
+| `data.group.name` | `string` | 群聊名称 |
+| `data.group.introduction` | `string` | 群聊简介 |
+| `data.group.createBy` | `string` | 创建者 |
+| `data.group.createTime` | `integer` | 创建时间戳 |
+| `data.group.avatarId` | `integer` | 头像 ID |
+| `data.group.avatarUrl` | `string` | 头像链接 |
+| `data.group.headcount` | `integer` | 群人数 |
+| `data.group.category` | `string` | 分类 |
+| `data.group.checkChatInfoRecord.id` | `integer` | 聊天序号 |
+| `data.group.checkChatInfoRecord.chatId` | `string` | 聊天 ID |
+| `data.group.checkChatInfoRecord.chatType` | `string` | 聊天类型 |
+| `data.group.checkChatInfoRecord.createTime` | `integer` | 聊天创建时间戳 |
+| `data.group.checkChatInfoRecord.updateTime` | `integer` | 群聊信息更新时间戳 |
 
 #### 当 type 为 bot 时
 
 | 参数名称 | 参数类型 | 说明内容 |
 | --- | --- | --- |
 | `code` | `integer` | 状态码 |
-| `message` | `string` | 返回信息 |
+| `msg` | `string` | 返回信息 |
 | `data` | `array` | 返回数据 |
-| `data.id` | `integer` | 机器人序号 |
-| `data.botId` | `string` | 机器人 ID |
-| `data.nickname` | `string` | 昵称 |
-| `data.nicknameId` | `integer` | 昵称 ID |
-| `data.avatarId` | `integer` | 头像 ID |
-| `data.avatarUrl` | `string` | 头像链接 |
-| `data.introduction` | `string` | 机器人简介 |
-| `data.createBy` | `string` | 创建者 |
-| `data.createTime` | `integer` | 创建时间戳 |
-| `data.headcount` | `integer` | 使用者人数 |
-| `data.private` | `boolean` | 是否为私有 |
+| `data.bot.id` | `integer` | 机器人序号 |
+| `data.bot.botId` | `string` | 机器人 ID |
+| `data.bot.nickname` | `string` | 昵称 |
+| `data.bot.nicknameId` | `integer` | 昵称 ID |
+| `data.bot.avatarId` | `integer` | 头像 ID |
+| `data.bot.avatarUrl` | `string` | 头像链接 |
+| `data.bot.introduction` | `string` | 机器人简介 |
+| `data.bot.createBy` | `string` | 创建者 |
+| `data.bot.createTime` | `integer` | 创建时间戳 |
+| `data.bot.headcount` | `integer` | 使用者人数 |
+| `data.bot.private` | `boolean` | 是否为私有 |
+| `data.bot.checkChatInfoRecord.id` | `integer` | 聊天序号 |
+| `data.bot.checkChatInfoRecord.chatId` | `string` | 聊天 ID |
+| `data.bot.checkChatInfoRecord.chatType` | `string` | 聊天类型 |
+| `data.bot.checkChatInfoRecord.createTime` | `integer` | 聊天创建时间戳 |
 
 ### 状态码说明
 
 | 名称 | 说明 |
 | --- | --- |
-| `1` | 成功 |
-| `2` | ID 不存在 |
-| `3` | 输入 ID 为空 |
-| `4` | 输入 type 错误 |
-| `-1` | 请求失败 |
-| `-2` | 解析失败 |
+| `1` | 成功（只有此时才有 data 字段） |
+| `-1` | 失败（原因详见 msg 字段） |
